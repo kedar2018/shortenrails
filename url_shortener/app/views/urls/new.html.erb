@@ -1,0 +1,11 @@
+<h1>Shorten Your URL</h1>
+
+<%= form_with model: @url, url: urls_path, method: :post do |form| %>
+  <%= form.label :original_url, "Enter a URL to shorten:" %><br>
+  <%= form.text_field :original_url %><br><br>
+  <%= form.submit "Shorten URL" %>
+<% end %>
+
+<% if flash[:alert] %>
+  <p style="color: red;"><%= flash[:alert] %></p>
+<% end %>
